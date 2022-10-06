@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/97e29a6186.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Start of nav-bar -->
+
+      <div class="nav-bar-container">
+        <div class="nav-bar-restaurant-name">John Doe's Garden</div>
+        <div class="nav-bar-box">
+          <ul class="nav-bar-box-ul">
+            <a href=""><li class="nav-bar-item">Home</li></a>
+            <a href="#menu"><li class="nav-bar-item">Menu</li></a>
+            <a href=""><li class="nav-bar-item">Gallery</li></a>
+            <a href=""><li class="nav-bar-item">Contact</li></a>
+            <a class="basket-btn"
+              ><li class="nav-bar-item">
+                <i class="fa-solid fa-cart-shopping"></i></li
+            ></a>
+          </ul>
+        </div>
+      </div>
+
+      <!-- End of nav-bar -->
+      <!-- Start of Basket -->
+      <div class="basket-container">
+        <div class="basket-items-container">
+          <!-- <div class="basket-item"><div class="basket-item-name">rdhrdshsehsesegseg<button><i class="fa-solid fa-xmark"></i></button></div><div class="basket-item-price">15 </div></div>
+  <div class="basket-item"><div class="basket-item-name">rdhrdshsehsesegsegsegs</div><div class="basket-item-price">15</div></div>
+  <div class="basket-item"><div class="basket-item-name">rdhrdshsehseseg</div><div class="basket-item-price">15</div></div> -->
+        </div>
+        <div class="basket-total-price">
+          Total price<span class="basket-item-total-price">0</span> $
+        </div>
+        <div class="basket-btn-box">
+          <button class="basket-checkout-btn">Checkout</button>
+        </div>
+      </div>
+
+      <!-- End of Basket -->
+      <!-- Start of home -->
+
+      <div class="home-container">
+        <div class="home-img-box"></div>
+        <div class="home-text-content-box">
+          <h1>John Doe's Garden</h1>
+          <p>
+            Welcome on our new John Doe's Garden website. We do our best to make
+            our clients satisfied.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+            sagittis ex sed vulputate molestie. Cras felis arcu, consequat eget
+            rutrum at, tempor sed erat. Vivamus ultricies egestas urna sed
+            interdum. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Curabitur pharetra dolor et arcu
+            mattis vehicula. Nullam ac lectus sed turpis condimentum condimentum
+            imperdiet eu eros.
+          </p>
+          <p>
+            Vivamus lobortis odio vitae eleifend ultricies. Integer tincidunt
+            arcu eget erat aliquet, vitae volutpat eros bibendum. Nunc
+            pellentesque placerat sem vel faucibus. Nulla accumsan, libero ut
+            egestas imperdiet, magna tellus tristique libero, quis bibendum
+            purus arcu quis magna. Praesent dictum vulputate posuere.
+          </p>
+        </div>
+      </div>
+
+      <!-- End of home -->
+      <!-- Start of menu -->
+      <!-- Start od delivery -->
+      <div class="delivery-container">
+        <h1>Checkout</h1>
+        <div class="delivery-box">
+          <div class="delivery-item ">
+            <h3>First Name</h3>
+            <input class="delivery-input delivery-name" />
+          </div>
+          <div class="delivery-item ">
+            <h3>Second Name</h3>
+            <input class="delivery-input delivery-second-name" />
+          </div>
+          <div class="delivery-item ">
+            <h3>Email</h3>
+            <input class="delivery-input delivery-email" />
+          </div>
+          <div class="delivery-item ">
+            <h3>Phone Number</h3>
+            <input class="delivery-input delivery-phone" />
+          </div>
+          <div class="delivery-item ">
+            <h3>Postal/Zip Code</h3>
+            <input class="delivery-input delivery-postal" />
+          </div>
+          <div class="delivery-item ">
+            <h3>City</h3>
+            <input class="delivery-input delivery-city" />
+          </div>
+          <div class="delivery-item ">
+            <h3>Street Name</h3>
+            <input class="delivery-input delivery-street" />
+          </div>
+          <div class="delivery-item ">
+            <h3>House number</h3>
+            <input class="delivery-input " />
+          </div>
+        </div>
+        <div class="delivery-payment">
+          <h2><span class="delivery-basket-value">Basket:</span></h2>
+          <h2><span>Delivery: 4.00 $</span></h2>
+          <h2><span class="delivery-basket-total">Total:</span></h2>
+          <span class = delivery-btns>
+            <button class="payment-confirm-btn">Confirm order</button
+            ><button class="payment-decline-btn">Decline</button>
+          <span>
+        </div>
+      </div>
+      <!-- End of delivery -->
+      <div class="menu-container" id="menu">
+        <div class="menu-title"><h1>MENU</h1></div>
+        <div class="menu-btns">
+          <ul>
+            <button><li class="menu-item all-btn">All</li></button>
+            <button><li class="menu-item breakfast-btn">Breakfast</li></button>
+            <button><li class="menu-item dinner-btn">Dinner</li></button>
+            <button><li class="menu-item sweets-btn">Sweets</li></button>
+          </ul>
+        </div>
+        <div class="menu-dish-container"></div>
+
+        <!-- End of menu -->
+
+        <!-- Start of contact -->
+        <section class="contact-section">
+          <div class="contact-container"></div>
+        </section>
+        <!-- End of contact -->
+        <!-- Start of footer -->
+        <section class="footer-section">
+          <div class="footer-container"></div>
+        </section>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

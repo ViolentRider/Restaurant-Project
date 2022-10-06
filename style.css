@@ -1,0 +1,359 @@
+* {
+  font-family: "PT Serif", serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
+}
+button :hover {
+  cursor: pointer;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+/* Start of nav-bar */
+.nav-bar-container {
+  display: flex;
+  flex-direction: row;
+  height: 8em;
+  padding: 0 2em 0 3em;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.nav-bar-restaurant-name {
+  display: inline-flex;
+  margin: 1.2em 0 0 0;
+  font-size: 2em;
+  font-weight: 600;
+  color: #fcd20f;
+}
+.nav-bar-box {
+  display: inline-flex;
+}
+.nav-bar-box a {
+  display: inline-flex;
+  text-decoration: none;
+  margin: 0;
+  padding: 0.3em 0.8em 0.3em 0.8em;
+  color: black;
+}
+.nav-bar-box-ul {
+  list-style-type: none;
+  margin: 1.8em 0 1.8em 0;
+  font-size: 1.4em;
+}
+/* fixed */
+.nav-bar-container-fixed {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  height: 6em;
+  padding: 0 0 1em 3.5em;
+}
+.nav-bar-box-ul-fixed {
+  list-style-type: none;
+  margin: 1.8em 3.4em 1.8em 0;
+  font-size: 1.4em;
+}
+
+/* End of nav-bar */
+/* Start of bakset */
+.basket-container {
+  display: none;
+  flex-direction: column;
+  width: 23em;
+  max-height: 80%;
+  position: fixed;
+  top: 8.3em;
+  right: 0.3em;
+  overflow-y: scroll;
+  background-color: white;
+  font-weight: 700;
+  border: 1px solid #fcd20f;
+}
+.basket-container {
+  z-index: 10;
+}
+.basket-container-toogle {
+  display: flex;
+  flex-direction: column;
+  width: 23em;
+  max-height: 80%;
+  position: fixed;
+  top: 8.3em;
+  right: 0.3em;
+  overflow-y: scroll;
+  background-color: white;
+  font-weight: 700;
+  border: 1px solid #fcd20f;
+  animation: slide-out-bottom 0.1s linear backwards;
+}
+
+@keyframes slide-out-bottom {
+  0% {
+    transform: translateY(-1em);
+  }
+  100% {
+    transform: translateY(0em);
+  }
+}
+.basket-btn {
+  cursor: pointer;
+}
+.basket-items-container {
+  display: flex;
+  flex-direction: column;
+}
+.basket-item {
+  display: flex;
+  flex-direction: row;
+}
+.basket-item-name {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 13em;
+  height: fit-content;
+  padding: 1em;
+  margin-right: 3em;
+}
+
+.basket-item-price {
+  display: inline-block;
+  text-align: center;
+  padding: 1em 0 1em 0;
+}
+.basket-item-dollar {
+  display: inline-block;
+  text-align: center;
+  padding: 1em 0 1em 0;
+  margin: 0 0 0 0.2em;
+}
+.basket-item-total-price {
+  margin-left: 0.5em;
+}
+.basket-total-price {
+  padding: 1em 2.3em 1em 1em;
+  text-align: end;
+  font-weight: 700;
+}
+.basket-btn-box {
+  display: block;
+  text-align: end;
+}
+.basket-checkout-btn {
+  background-color: #fcd20f;
+  width: min-content;
+  padding: 1em 2em 1em 2em;
+  margin: 1em;
+  font-weight: 700;
+  border-radius: 2em;
+}
+.basket-checkout-btn:hover {
+  cursor: pointer;
+}
+/* End of basket */
+/* Start of home */
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgb(241, 241, 240);
+  background: linear-gradient(
+    0deg,
+    rgba(241, 241, 240, 1) 1%,
+    rgba(242, 242, 242, 1) 10%,
+    rgba(222, 223, 215, 1) 95%,
+    rgba(241, 241, 240, 1) 99%
+  );
+  padding: 8em 6em 6em 6em;
+  margin-bottom: 0;
+  height: 38.6em;
+}
+.home-img-box {
+  display: block;
+  background-image: url(./images/chef-g3d80a4f8c_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 55em;
+  height: auto;
+}
+
+.home-text-content-box {
+  display: block;
+  height: min-content;
+  text-align: center;
+  font-size: 1.3em;
+  margin: 0 0 0 4em;
+  width: 45em;
+}
+/* End of home */
+/* Start of basket */
+
+/* End of basket */
+/* Start of menu */
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  background: rgb(241, 241, 240);
+  background: linear-gradient(
+    0deg,
+    rgba(241, 241, 240, 1) 1%,
+    rgba(242, 242, 242, 1) 10%,
+    rgba(222, 223, 215, 1) 95%,
+    rgba(241, 241, 240, 1) 99%
+  );
+  margin: 0;
+}
+.menu-title {
+  text-align: center;
+  margin: 3em 1em 1em 1em;
+}
+.menu-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.menu-item {
+  display: inline-flex;
+  text-decoration: none;
+  margin: 0;
+  padding: 0.3em 0.8em 0.3em 0.8em;
+  font-size: 1.8em;
+  color: black;
+}
+.menu-btns ul {
+  list-style-type: none;
+  margin: 1.8em 0 1.8em 0;
+  font-size: 1.4em;
+}
+.menu-dish-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2em 10em 6em 10em;
+}
+.menu-dish-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2em;
+  width: 45em;
+  height: 20em;
+}
+.menu-dish-box img {
+  width: 25em;
+  margin: 1em 1em 1em 1em;
+}
+.menu-dish-box article {
+  margin: 1em 1em 1em 1em;
+  padding: 1em 1em 1em 1em;
+  width: 16em;
+}
+.dish-tools {
+  display: inline-flex;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+/* End of menu */
+/* Start od Delivery */
+.delivery-container {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 8.3em;
+  margin: 0 25em 0 25em;
+  max-height: 85%;
+  overflow-y: scroll;
+  background-color: white;
+  border: 1px solid #fcd20f;
+  animation: slide-out-bottom 0.1s linear backwards;
+}
+
+.delivery-container {
+  z-index: 9999;
+}
+.delivery-container h1 {
+  margin: 0.8em 0 0 0;
+  text-align: center;
+  color: #fcd20f;
+}
+.delivery-container h2 {
+  margin: 0.3em 4em 0.3em 0;
+  text-align: right;
+}
+.delivery-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 5em 0 5em;
+  justify-content: space-between;
+}
+.delivery-item {
+  display: flex;
+  flex-direction: column;
+  width: 25em;
+  margin: 0.8em 0 0.8em 0;
+}
+.delivery-input {
+  width: auto;
+  height: 3em;
+  border-radius: 1em;
+}
+.delivery-payment {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  align-items: flex-end;
+}
+.delivery-payment button {
+  background-color: #fcd20f;
+  width: max-content;
+  padding: 1em 4em 1em 4em;
+  margin: 0 0 0 1em;
+  font-weight: 700;
+  border-radius: 2em;
+}
+.delivery-payment button:hover {
+  cursor: pointer;
+}
+.delivery-btns {
+  text-align: center;
+  width: 100%;
+  padding: 1em;
+}
+
+/* End of Delivery */
+/* Start of contact */
+.contact-container {
+  background-color: aqua;
+}
+/* End of contact */
+
+/* Start of footer */
+.footer-container {
+  background-color: purple;
+}
+/* End of footer */
+@media only screen and (max-width: 800px) {
+  .home-container {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .menu-dish-box {
+    flex-direction: column;
+    height: 40em;
+    margin: 1em;
+  }
+}
