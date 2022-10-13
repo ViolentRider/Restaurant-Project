@@ -21,14 +21,16 @@
     <div class="main-container">
       <!-- Start of nav-bar -->
 
-      <div class="nav-bar-container">
+      <div class="nav-bar-container" >
         <div class="nav-bar-restaurant-name">John Doe's Garden</div>
         <div class="nav-bar-box">
           <ul class="nav-bar-box-ul">
-            <a href=""><li class="nav-bar-item">Home</li></a>
-            <a href="#menu"><li class="nav-bar-item">Menu</li></a>
-            <a href=""><li class="nav-bar-item">Gallery</li></a>
-            <a href=""><li class="nav-bar-item">Contact</li></a>
+            <a href="#home"><li class="nav-bar-item nav-bar-item-home">Home</li><i class="fa-solid fa-house-chimney nav-bar-home"></i></a>
+            <a href="#menu"><li class="nav-bar-item nav-bar-item-menu">Menu</li><i class="fa-solid fa-utensils nav-bar-menu"></i></a>
+            <a  class="nav-bar-events"><li class="nav-bar-item nav-bar-events">Events</li></a>
+            <a href="#footer" class="nav-bar-contact"><li class="nav-bar-item nav-bar-contact">Contact</li></a>
+            <span class="navbar-user-btn"><li class="nav-bar-item nav-bar-login-item">Log in</li><i class="fa-solid fa-user nav-bar-user"></i></span>
+            <span class="navbar-user-account-btn"><li class="nav-bar-item" ></li></span>
             <a class="basket-btn"
               ><li class="nav-bar-item">
                 <i class="fa-solid fa-cart-shopping"></i></li
@@ -36,6 +38,8 @@
           </ul>
         </div>
       </div>
+
+      
 
       <!-- End of nav-bar -->
       <!-- Start of Basket -->
@@ -52,12 +56,22 @@
           <button class="basket-checkout-btn">Checkout</button>
         </div>
       </div>
-
+<div class="user-account-container">
+<p class="user-account-name"></p>
+  <p class="user-account-delivery">You have free delivery 🚚 </p>
+  <button class="user-account-logout">Log Out</button>
+</div>
       <!-- End of Basket -->
       <!-- Start of home -->
+<nav id="home"></nav>
+      <div class="home-container" >
+        <div class="home-img-box">
+<img src="./images/alex-haney-CAhjZmVk5H4-unsplash.jpg" class="img1">
+<img src="./images/ali-inay-y3aP9oo9Pjc-unsplash.jpg" class="img2">
+<img src="./images/chef-g3d80a4f8c_1920.jpg" class="img3">
+<img src="./images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="img4">
 
-      <div class="home-container">
-        <div class="home-img-box"></div>
+        </div>
         <div class="home-text-content-box">
           <h1>John Doe's Garden</h1>
           <p>
@@ -79,6 +93,7 @@
             pellentesque placerat sem vel faucibus. Nulla accumsan, libero ut
             egestas imperdiet, magna tellus tristique libero, quis bibendum
             purus arcu quis magna. Praesent dictum vulputate posuere.
+           
           </p>
         </div>
       </div>
@@ -86,6 +101,12 @@
       <!-- End of home -->
       <!-- Start of menu -->
       <!-- Start od delivery -->
+      <div class="delivery-timer">
+<h1>Your order is completed <button class="x-mark-delivery-timer"><i class="fa-solid fa-xmark fa-2xl"></i></button></h1> 
+<span class="timer"></span>
+<img src="./images/fast-delivery.png" alt="">
+
+      </div>
       <div class="delivery-container">
         <h1>Checkout</h1>
         <div class="delivery-box">
@@ -119,12 +140,13 @@
           </div>
           <div class="delivery-item ">
             <h3>House number</h3>
-            <input class="delivery-input " />
+            <input class="delivery-input delivery-house " />
           </div>
         </div>
         <div class="delivery-payment">
+          <span class="delivery-basket-warning">Fill in empty brackets !</span>
           <h2><span class="delivery-basket-value">Basket:</span></h2>
-          <h2><span>Delivery: 4.00 $</span></h2>
+          <h2 class="delivery-value"><span>Delivery: 4.00 $</span></h2>
           <h2><span class="delivery-basket-total">Total:</span></h2>
           <span class = delivery-btns>
             <button class="payment-confirm-btn">Confirm order</button
@@ -133,7 +155,40 @@
         </div>
       </div>
       <!-- End of delivery -->
-      <div class="menu-container" id="menu">
+      <!-- Login/register -->
+      <div class="log-in-container account-actions-container">
+        
+        <h1>John Doe's Garden</h1>
+       <h2>Sign in</h2>
+       <p>Please log  in to use platform</p>
+       <input class="login-email-input" placeholder="E-mail" >
+       <input class="login-password-input" placeholder="Password">
+       <button class="sign-in-btn">Sign in</button>
+       
+       <p>Don't have an account? <a class="href-to-register">Create free one.</a></p>
+       <p class="login-warning"></p>
+      </div>
+      <div class="register-container account-actions-container">
+        
+        <h1>John Doe's Garden</h1>
+       <h2>Register</h2>
+       <p>Create free account.</p>
+       <input class="register-email-input" placeholder="E-mail">
+       <input class="register-first-password-input" placeholder="Password">
+       <input class="register-second-password-input" placeholder="Confirm your password">
+       <button class="register-btn">Register</button>
+       <p class="register-warning p-warning"></p>
+      </div>
+
+
+
+
+
+
+
+      <!-- END -->
+      <nav id="menu"></nav>
+      <div class="menu-container" >
         <div class="menu-title"><h1>MENU</h1></div>
         <div class="menu-btns">
           <ul>
@@ -153,8 +208,22 @@
         </section>
         <!-- End of contact -->
         <!-- Start of footer -->
-        <section class="footer-section">
-          <div class="footer-container"></div>
+        <nav id="footer"></nav>
+          <div class="footer-container">
+            <span class="footer-restaurant-name">John Doe's Garden</span>
+            <div class="footer-contact-box">
+              <p>31-023 Cracow</p>
+              <p>Wojcimskiego street</p>
+              <p>e-mail: johnDoesGarden@gmail.com</p>
+              <p>Phone number: 777 662 333</p>
+            </div>
+            <div class="footer-socjalmedia">
+              <span><img src="./images/facebook.png" alt="facebook-icon" srcset="">  Facebook</span>
+              <span><img src="./images/instagram.png" alt="instagram-icon" srcset=""> Instagram</span>
+              <span><a href="https://www.flaticon.com/packs/social-media-163" title="google icons" class="thank-u-mr-babkin">Icon Pack: Social Media 
+                | Flat created by Ruslan Babkin - Flaticon</a></span>
+            </div>
+          </div>
         </section>
       </div>
     </div>

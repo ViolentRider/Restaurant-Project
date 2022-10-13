@@ -4,16 +4,46 @@ const menuContainer = document.querySelector(".menu-container");
 const basketContainer = document.querySelector(".basket-container");
 const basketItemsContainer = document.querySelector(".basket-items-container");
 const basketItemTotalPrice = document.querySelector(".basket-item-total-price");
+const homeImg = document.querySelector(".home-img-box");
 //NavBar
 const navBar = document.querySelector(".nav-bar-container");
 const navBarRestName = document.querySelector(".nav-bar-restaurant-name");
 const navBarBox = document.querySelector(".nav-bar-box-ul");
 const basketBtn = document.querySelector(".basket-btn");
+const userBtn = document.querySelector(".navbar-user-btn");
+const userAccount = document.querySelector(".navbar-user-account-btn");
+//account
+const userAccountName = document.querySelector(".user-account-name");
+const userAccountContainer = document.querySelector(".user-account-container");
+const userAccountLogout = document.querySelector(".user-account-logout");
 //delivery
 const deliveryContainer = document.querySelector(".delivery-container");
 const deliveryPaymentValue = document.querySelector(".delivery-basket-value");
 const deliveryPaymentTotal = document.querySelector(".delivery-basket-total");
 const paymentConfirmBtn = document.querySelector(".payment-confirm-btn");
+const deliveryWarning = document.querySelector(".delivery-basket-warning");
+const deliveryValue = document.querySelector(".delivery-value");
+//timer
+const deliveryTimeContainer = document.querySelector(".delivery-timer");
+const spanTimer = document.querySelector(".timer");
+const timerXMark = document.querySelector(".x-mark-delivery-timer");
+//register/login
+const logInContainer = document.querySelector(".log-in-container");
+const registerContainer = document.querySelector(".register-container");
+const hrefToRegister = document.querySelector(".href-to-register");
+const loginEmailInput = document.querySelector(".login-email-input");
+const loginPasswordInput = document.querySelector(".login-password-input");
+const registerEmailInput = document.querySelector(".register-email-input");
+const loginWarning = document.querySelector(".login-warning");
+const registerFirstPasswordInput = document.querySelector(
+  ".register-first-password-input"
+);
+const registerSecondtPasswordInput = document.querySelector(
+  ".register-second-password-input"
+);
+const registerBtn = document.querySelector(".register-btn");
+const signInBtn = document.querySelector(".sign-in-btn");
+const registerWarning = document.querySelector(".register-warning");
 const dishes = [
   {
     name: "Bowl of oatmeal",
@@ -286,22 +316,36 @@ const checkBasketTotalPrice = (e) => {
     totalPrice -= basketItemPriceMinusNum;
     e.target.closest(".basket-item").remove();
   } else if (e.target.matches(".basket-checkout-btn")) {
-    deliveryContainer.style.display = "flex";
-    deliveryPaymentValue.textContent = `Basket: ${totalPrice}.00 $`;
-    deliveryPaymentTotal.textContent = `Total: ${totalPrice + 4}.00 $`;
+    if (userAccount.style.display == "inline-flex") {
+      deliveryContainer.style.display = "flex";
+      deliveryPaymentValue.textContent = `Basket: ${totalPrice}.00 $`;
+      deliveryPaymentTotal.textContent = `Total: ${totalPrice}.00 $`;
+      deliveryValue.style.textDecoration = "line-through";
+    } else {
+      deliveryContainer.style.display = "flex";
+      deliveryPaymentValue.textContent = `Basket: ${totalPrice}.00 $`;
+      deliveryPaymentTotal.textContent = `Total: ${totalPrice + 4}.00 $`;
+      deliveryValue.style.textDecoration = "none";
+    }
   }
   basketItemTotalPrice.textContent = totalPrice;
 };
-
+//NavBar scroll
+const navBarRestaurantName = document.querySelector(".nav-bar-restaurant-name");
 const navBarFnc = () => {
   const scrollHeight = window.pageYOffset;
   const navHeight = navBar.getBoundingClientRect().height;
+  // const navHeight = 105.4375;
+  console.log(navHeight);
+
   if (scrollHeight > navHeight) {
     navBar.classList.add("nav-bar-container-fixed");
     navBarBox.classList.add("nav-bar-box-ul-fixed");
+    navBarRestaurantName.classList.add("nav-bar-restaurant-name-fixed");
   } else {
     navBar.classList.remove("nav-bar-container-fixed");
     navBarBox.classList.remove("nav-bar-box-ul-fixed");
+    navBarRestaurantName.classList.remove("nav-bar-restaurant-name-fixed");
   }
 };
 const basketToggle = () => {
@@ -312,6 +356,15 @@ console.log(basketBtn);
 const deliveryBtns = (e) => {
   if (e.target.matches(".payment-decline-btn")) {
     deliveryContainer.style.display = "none";
+    deliveryName.value = "";
+    deliverySecondName.value = "";
+    deliveryEmail.value = "";
+    deliveryPhone.value = "";
+    deliveryPostal.value = "";
+    deliveryCity.value = "";
+    deliveryStreet.value = "";
+    deliveryHouse.value = "";
+    deliveryWarning.style.display = "none";
   }
 };
 const deliveryName = document.querySelector(".delivery-name");
@@ -323,9 +376,135 @@ const deliveryCity = document.querySelector(".delivery-city");
 const deliveryStreet = document.querySelector(".delivery-street");
 const deliveryHouse = document.querySelector(".delivery-house");
 const checkDeliveryInfo = () => {
-  if (deliveryName.value !== "") {
-    console.log("git");
+  if (
+    deliveryName.value &&
+    deliverySecondName.value &&
+    deliveryEmail.value &&
+    deliveryPhone.value &&
+    deliveryPostal.value &&
+    deliveryCity.value &&
+    deliveryStreet.value &&
+    deliveryHouse.value !== ""
+  ) {
+    console.log("nice");
+    deliveryContainer.style.display = "none";
+    deliveryTimeContainer.style.display = "flex";
+    deliveryName.value = "";
+    deliverySecondName.value = "";
+    deliveryEmail.value = "";
+    deliveryPhone.value = "";
+    deliveryPostal.value = "";
+    deliveryCity.value = "";
+    deliveryStreet.value = "";
+    deliveryHouse.value = "";
+    deliveryWarning.style.display = "none";
+    window.scrollTo(0, 0);
+  } else {
+    deliveryWarning.style.display = "flex";
   }
+};
+
+//Delivery timer
+const startminutes = 40;
+let time = startminutes * 60;
+
+const timer = () => {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+  spanTimer.innerHTML = `${minutes} : ${seconds}`;
+  time--;
+};
+setInterval(timer, 1000);
+
+const closeDelivery = () => {
+  deliveryTimeContainer.style.display = "none";
+};
+//End of Delivery Timer
+
+const users = new Map();
+
+const checkRegisterFields = () => {
+  if (
+    registerFirstPasswordInput.value === registerSecondtPasswordInput.value &&
+    registerEmailInput.value !== "" &&
+    registerFirstPasswordInput.value !== "" &&
+    registerSecondtPasswordInput !== "" &&
+    users.has(`${registerEmailInput.value}`) === false
+  ) {
+    users.set(
+      `${registerEmailInput.value}`,
+      `${registerFirstPasswordInput.value}`
+    );
+    console.log(users);
+
+    registerContainer.classList.toggle("register-container-toggle");
+    registerEmailInput.value = "";
+    registerFirstPasswordInput.value = "";
+    registerSecondtPasswordInput.value = "";
+  } else if (
+    registerFirstPasswordInput.value !== registerSecondtPasswordInput.value
+  ) {
+    registerWarning.style.color = "red";
+    registerWarning.innerHTML = "Your passwords are different";
+    console.log("popraw dane");
+  } else if (users.has(`${registerEmailInput.value}`) === true) {
+    registerWarning.innerHTML = `There is an account with this e-mail`;
+  }
+};
+
+const signInFnc = () => {
+  if (
+    users.has(`${loginEmailInput.value}`) === true &&
+    users.get(`${loginEmailInput.value}`) === loginPasswordInput.value
+  ) {
+    //////////
+    userAccount.style.position = "relative";
+    userAccount.style.display = "inline-flex";
+    ////////
+    userAccount.firstChild.innerHTML = loginEmailInput.value;
+    userBtn.style.display = "none";
+    logInContainer.classList.toggle("log-in-container-toggle");
+    userAccountName.innerHTML = loginEmailInput.value;
+    loginEmailInput.value = "";
+    loginPasswordInput.value = "";
+    console.log("super");
+  } else {
+    loginWarning.style.color = "red";
+    loginWarning.innerHTML = "Wrong username or password.";
+  }
+  // user.email == loginEmailInput.value &&
+  // user.password == loginPasswordInput.value
+};
+
+const showLoginPopup = () => {
+  if (registerContainer.classList.contains("register-container-toggle")) {
+    registerContainer.classList.toggle("register-container-toggle");
+    registerEmailInput.value = "";
+    registerFirstPasswordInput.value = "";
+    registerSecondtPasswordInput.value = "";
+    registerWarning.innerHTML = "";
+  } else {
+    loginEmailInput.value = "";
+    loginPasswordInput.value = "";
+    loginWarning.innerHTML = "";
+  }
+  logInContainer.classList.toggle("log-in-container-toggle");
+};
+const showRegisterPopup = () => {
+  registerContainer.classList.toggle("register-container-toggle");
+  loginEmailInput.value = "";
+  loginPasswordInput.value = "";
+};
+
+const displayUserAccountInfo = () => {
+  userAccountContainer.classList.toggle("user-account-container-toggle");
+};
+const logoutUserAccount = () => {
+  userAccount.style.display = "none";
+  userAccount.style.position = "absolute";
+  userBtn.style.display = "inline-flex";
+  userAccountContainer.classList.toggle("user-account-container-toggle");
 };
 console.log(paymentConfirmBtn);
 function prepareDOMEvents() {
@@ -335,5 +514,12 @@ function prepareDOMEvents() {
   basketBtn.addEventListener("click", basketToggle);
   deliveryContainer.addEventListener("click", deliveryBtns);
   paymentConfirmBtn.addEventListener("click", checkDeliveryInfo);
+  timerXMark.addEventListener("click", closeDelivery);
+  userBtn.addEventListener("click", showLoginPopup);
+  hrefToRegister.addEventListener("click", showRegisterPopup);
+  registerBtn.addEventListener("click", checkRegisterFields);
+  signInBtn.addEventListener("click", signInFnc);
+  userAccount.addEventListener("click", displayUserAccountInfo);
+  userAccountLogout.addEventListener("click", logoutUserAccount);
 }
 document.addEventListener("DOMContentLoaded", main);
