@@ -12,6 +12,9 @@ const navBarBox = document.querySelector(".nav-bar-box-ul");
 const basketBtn = document.querySelector(".basket-btn");
 const userBtn = document.querySelector(".navbar-user-btn");
 const userAccount = document.querySelector(".navbar-user-account-btn");
+const navBarBasketItemsCounter = document.querySelector(
+  ".nav-bar-basket-items-counter"
+);
 //account
 const userAccountName = document.querySelector(".user-account-name");
 const userAccountContainer = document.querySelector(".user-account-container");
@@ -316,17 +319,29 @@ const checkBasketTotalPrice = (e) => {
     totalPrice -= basketItemPriceMinusNum;
     e.target.closest(".basket-item").remove();
   } else if (e.target.matches(".basket-checkout-btn")) {
-    if (userAccount.style.display == "inline-flex") {
+    if (userAccount.style.display == "inline-flex" && totalPrice !== 0) {
       deliveryContainer.style.display = "flex";
       deliveryPaymentValue.textContent = `Basket: ${totalPrice}.00 $`;
       deliveryPaymentTotal.textContent = `Total: ${totalPrice}.00 $`;
       deliveryValue.style.textDecoration = "line-through";
-    } else {
+    } else if (totalPrice !== 0) {
       deliveryContainer.style.display = "flex";
       deliveryPaymentValue.textContent = `Basket: ${totalPrice}.00 $`;
       deliveryPaymentTotal.textContent = `Total: ${totalPrice + 4}.00 $`;
       deliveryValue.style.textDecoration = "none";
     }
+  }
+
+  let allBasketItems = document.querySelectorAll(".basket-item");
+  if (allBasketItems.length !== 0) {
+    navBarBasketItemsCounter.classList.add(
+      "nav-bar-basket-items-counter-display"
+    );
+    navBarBasketItemsCounter.innerHTML = allBasketItems.length;
+  } else if (allBasketItems.length == 0) {
+    navBarBasketItemsCounter.classList.remove(
+      "nav-bar-basket-items-counter-display"
+    );
   }
   basketItemTotalPrice.textContent = totalPrice;
 };
@@ -350,6 +365,8 @@ const navBarFnc = () => {
 };
 const basketToggle = () => {
   basketContainer.classList.toggle("basket-container-toogle");
+  logInContainer.classList.remove("log-in-container-toggle");
+  registerContainer.classList.remove("register-container-toggle");
 };
 console.log(basketBtn);
 
@@ -388,6 +405,7 @@ const checkDeliveryInfo = () => {
   ) {
     console.log("nice");
     deliveryContainer.style.display = "none";
+    basketContainer.classList.remove("basket-container-toogle");
     deliveryTimeContainer.style.display = "flex";
     deliveryName.value = "";
     deliverySecondName.value = "";
@@ -490,9 +508,11 @@ const showLoginPopup = () => {
     loginWarning.innerHTML = "";
   }
   logInContainer.classList.toggle("log-in-container-toggle");
+  basketContainer.classList.remove("basket-container-toogle");
 };
 const showRegisterPopup = () => {
   registerContainer.classList.toggle("register-container-toggle");
+
   loginEmailInput.value = "";
   loginPasswordInput.value = "";
 };

@@ -171,6 +171,22 @@ button :hover {
 }
 .basket-btn {
   cursor: pointer;
+  display: block;
+}
+.nav-bar-basket-items-counter {
+  display: none;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: green;
+  background-color: gold;
+  height: 1.2em;
+  width: 1.2em;
+  border-radius: 50%;
+  padding: 0.1em;
+  text-align: center;
+}
+.nav-bar-basket-items-counter-display {
+  display: block;
 }
 .basket-items-container {
   display: flex;
@@ -629,37 +645,40 @@ button :hover {
   }
   .nav-bar-box {
     display: inline-flex;
+    align-self: center;
   }
   .nav-bar-box-ul {
-    margin: 0 0em 0 0;
+    margin: 0;
     padding: 0;
+    align-self: center;
   }
   .navbar-user-account-btn {
     display: inline-flex;
     flex-direction: row;
     height: auto;
     margin: 0;
+    padding: 0;
     max-width: min-content;
     font-size: 0.8em;
   }
   .nav-bar-container-fixed {
     display: flex;
     position: fixed;
-    width: 100%;
+    height: auto;
     background-color: white;
-    padding: 1em 0 1em 0;
+    padding: 1em 1em 1em 1em;
     z-index: 9999;
     animation: slide-out-bottom 0.4s linear backwards;
   }
   .nav-bar-box-ul-fixed {
     list-style-type: none;
     /* margin: 1.8em 3.4em 1.8em 0; */
-    margin: 0 0em 0 0;
+    margin: 0 1em 0 0;
     font-size: 1.4em;
   }
   .nav-bar-restaurant-name-fixed {
     display: inline-flex;
-    margin: 0em 0 0 1em;
+    margin: 0em 0 0 0em;
     font-size: 1.3em;
   }
   .nav-bar-events {
@@ -732,7 +751,26 @@ button :hover {
   /* coś nie halo z tym img przez position:absolute 
   +
   To niżej do poprawy*/
-
+  .account-actions-container {
+    width: 80%;
+    padding: 0;
+    top: 7em;
+    max-height: 80%;
+  }
+  .account-actions-container input {
+    width: 80%;
+    align-self: center;
+  }
+  .account-actions-container button {
+    width: 90%;
+    margin: 0;
+    align-self: center;
+  }
+  .user-account-container {
+    right: auto;
+    width: 90%;
+    align-self: center;
+  }
   .menu-container {
     display: flex;
     flex-direction: column;
@@ -770,12 +808,17 @@ button :hover {
     text-align: center;
   }
   .menu-dish-box img {
-    margin: 3em 0 3em 0;
+    width: 80%;
   }
   .menu-dish-box article {
     width: 80%;
     margin: 0;
     padding: 0;
+  }
+  .basket-container {
+    width: 90%;
+    align-self: center;
+    right: auto;
   }
   .delivery-container {
     width: 90%;
@@ -809,9 +852,10 @@ button :hover {
     width: 80%;
     margin: 0;
     align-self: center;
+    top: 12em;
   }
   .delivery-timer h1 {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .delivery-timer img {
     width: 80%;
