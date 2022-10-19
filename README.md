@@ -27,7 +27,7 @@
 <img src="images/website_presentation_1.png" alt="Logo" width="100%" height="100%">
 
 Restaurant-Project is a website build on flexbox, with simple css styling and JavaScript functions. 
-* Menu items are displaied dynamicly using JavaScript methods.
+* Menu items are displayed dynamically using JavaScript methods.
 * Menu buttons use the filtering options to display the correct categories of items in menu.
 * Website has posibility to create an account to get a free delivery bonus. 
 * After loggin in and confirming your order total price will be calculated without delivery price value.
@@ -39,11 +39,11 @@ Restaurant-Project is a website build on flexbox, with simple css styling and Ja
 
 
 ## Desktop view
-<img src="images/website_presentation_2.png" alt="Logo" width="1000" height="470">
-<img src="images/website_presentation_3.png" alt="Logo" width="1000" height="470">
+<img src="images/website_presentation_2.png" alt="Logo" width="100%" height="auto">
+<img src="images/website_presentation_3.png" alt="Logo" width="1000" height="auto">
 
 ## Mobile view
-<img src="images/website_presentation_4.jpg" alt="Logo" width="260" height="598"> <img src="images/website_presentation_5.jpg" alt="Logo" width="260" height="598"> <img src="images/website_presentation_6.jpg" alt="Logo" width="260" height="598">      
+<img src="images/website_presentation_4.jpg" alt="Logo" width="30%" height="auto"> <img src="images/website_presentation_5.jpg" alt="Logo" width="30%" height="auto"> <img src="images/website_presentation_6.jpg" alt="Logo" width="30%" height="auto">      
 
 
 <!-- CONTACT -->
