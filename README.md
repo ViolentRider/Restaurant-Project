@@ -8,7 +8,6 @@
 
   <p align="center">
   <br />
-Flexbox project with responsive web design and simple JavaScript operations.
     <br/>
     <br/>
     <a href="https://violentrider.github.io/Restaurant-Project/"><strong>Explore the website</strong></a>
@@ -43,7 +42,7 @@ Restaurant-Project is a website build on flexbox, with simple css styling and Ja
 <img src="images/website_presentation_2.png" alt="Logo" width="1300" height="550">
 <img src="images/website_presentation_3.png" alt="Logo" width="1300" height="550">
 
-## Movile view
+## Mobile view
 <img src="images/website_presentation_4.jpg" alt="Logo" width="320" height="658">     <img src="images/website_presentation_5.jpg" alt="Logo" width="320" height="658">     <img src="images/website_presentation_6.jpg" alt="Logo" width="320" height="658">
 
 
