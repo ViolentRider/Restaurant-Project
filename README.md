@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.JPG" alt="Logo" width="450" height="80">
+    <img src="images/logo.JPG" alt="Logo" width="100%" height="100%">
   </a>
 
 
@@ -24,7 +24,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<img src="images/website_presentation_1.png" alt="Logo" width="1300" height="550">
+<img src="images/website_presentation_1.png" alt="Logo" width="100%" height="100%">
 
 Restaurant-Project is a website build on flexbox, with simple css styling and JavaScript functions. 
 * Menu items are displaied dynamicly using JavaScript methods.
@@ -39,11 +39,11 @@ Restaurant-Project is a website build on flexbox, with simple css styling and Ja
 
 
 ## Desktop view
-<img src="images/website_presentation_2.png" alt="Logo" width="1300" height="550">
-<img src="images/website_presentation_3.png" alt="Logo" width="1300" height="550">
+<img src="images/website_presentation_2.png" alt="Logo" width="1000" height="470">
+<img src="images/website_presentation_3.png" alt="Logo" width="1000" height="470">
 
 ## Mobile view
-<img src="images/website_presentation_4.jpg" alt="Logo" width="320" height="658">     <img src="images/website_presentation_5.jpg" alt="Logo" width="320" height="658">     <img src="images/website_presentation_6.jpg" alt="Logo" width="320" height="658">
+<img src="images/website_presentation_4.jpg" alt="Logo" width="300" height="638">     <img src="images/website_presentation_5.jpg" alt="Logo" width="300" height="638">     <img src="images/website_presentation_6.jpg" alt="Logo" width="300" height="638">
 
 
 <!-- CONTACT -->
