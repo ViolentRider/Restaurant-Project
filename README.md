@@ -22,7 +22,7 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
+<!-- ABOUT THE PROJEC -->
 ## About The Project
 <img src="images/website_presentation_1.png" alt="Logo" width="100%" height="100%">
 
