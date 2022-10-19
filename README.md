@@ -43,7 +43,7 @@ Restaurant-Project is a website build on flexbox, with simple css styling and Ja
 <img src="images/website_presentation_3.png" alt="Logo" width="1000" height="470">
 
 ## Mobile view
-<img src="images/website_presentation_4.jpg" alt="Logo" width="300" height="638"> <img src="images/website_presentation_5.jpg" alt="Logo" width="300" height="638"> <img src="images/website_presentation_6.jpg" alt="Logo" width="300" height="638">      
+<img src="images/website_presentation_4.jpg" alt="Logo" width="200" height="638"> <img src="images/website_presentation_5.jpg" alt="Logo" width="200" height="638"> <img src="images/website_presentation_6.jpg" alt="Logo" width="200" height="638">      
 
 
 <!-- CONTACT -->
