@@ -10,7 +10,7 @@
   <br />
     <br/>
     <br/>
-    <a href="https://violentrider.github.io/Restaurant-Project/"><strong>Explore the website</strong></a>
+    <a href="https://bartosz-bednarski.github.io/Restaurant-Project/"><strong>Explore the website</strong></a>
     <br />
     
   </p>
@@ -51,7 +51,7 @@ Restaurant-Project is a website build on flexbox, with simple css styling and Ja
 
 Bartosz Bednarski - bartosz.bednarski97@gmail.com
 
-Project Link: [https://github.com/ViolentRider/Restaurant-Project](https://github.com/ViolentRider/Restaurant-Project)
+Project Link: [https://bartosz-bednarski.github.io/Restaurant-Project/](https://bartosz-bednarski.github.io/Restaurant-Project/)
 
 
 
